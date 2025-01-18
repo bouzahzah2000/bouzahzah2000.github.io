@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Lessons - EnglishMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dark-mode.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation bar will be loaded dynamically -->
+    <div id="nav-placeholder"></div>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Video Lessons</h1>
+
+        <!-- Video Categories -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <select class="form-select" id="categorySelect">
+                    <option value="all">All Categories</option>
+                    <option value="conversation">Conversation</option>
+                    <option value="pronunciation">Pronunciation</option>
+                    <option value="grammar">Grammar</option>
+                    <option value="vocabulary">Vocabulary</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="row">
+            <!-- Conversation Video -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/600x400?text=Conversation+Practice" class="card-img-top" alt="Conversation Practice">
+                    <div class="card-body">
+                        <h5 class="card-title">Basic Conversations</h5>
+                        <p class="card-text">Learn common phrases and expressions used in everyday conversations.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Beginner</span>
+                            <button class="btn btn-outline-primary">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pronunciation Video -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/600x400?text=Pronunciation" class="card-img-top" alt="Pronunciation">
+                    <div class="card-body">
+                        <h5 class="card-title">English Sounds</h5>
+                        <p class="card-text">Master the pronunciation of difficult English sounds and phonemes.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">All Levels</span>
+                            <button class="btn btn-outline-primary">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grammar Video -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/600x400?text=Grammar+Rules" class="card-img-top" alt="Grammar Rules">
+                    <div class="card-body">
+                        <h5 class="card-title">Present Perfect</h5>
+                        <p class="card-text">Understanding and using the present perfect tense in English.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Intermediate</span>
+                            <button class="btn btn-outline-primary">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Videos -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/600x400?text=Business+English" class="card-img-top" alt="Business English">
+                    <div class="card-body">
+                        <h5 class="card-title">Business Meetings</h5>
+                        <p class="card-text">Learn essential vocabulary and phrases for business meetings.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-info">Advanced</span>
+                            <button class="btn btn-outline-primary">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary Video -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/600x400?text=Vocabulary" class="card-img-top" alt="Vocabulary">
+                    <div class="card-body">
+                        <h5 class="card-title">Phrasal Verbs</h5>
+                        <p class="card-text">Master common phrasal verbs used in everyday English.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Intermediate</span>
+                            <button class="btn btn-outline-primary">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speaking Video -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://placehold.co/600x400?text=Speaking+Practice" class="card-img-top" alt="Speaking Practice">
+                    <div class="card-body">
+                        <h5 class="card-title">Public Speaking</h5>
+                        <p class="card-text">Tips and techniques for confident public speaking in English.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-danger">Advanced</span>
+                            <button class="btn btn-outline-primary">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 EnglishMaster. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load navigation
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+
+        // Handle category selection
+        document.getElementById('categorySelect').addEventListener('change', function() {
+            // Filter videos based on selected category
+            console.log('Selected category:', this.value);
+        });
+    </script>
+</body>
+</html>

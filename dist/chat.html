@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat - EnglishMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dark-mode.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .chat-container {
+            height: 70vh;
+            display: flex;
+        }
+        .chat-sidebar {
+            width: 300px;
+            border-right: 1px solid #dee2e6;
+            overflow-y: auto;
+        }
+        .chat-main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+        .chat-input {
+            border-top: 1px solid #dee2e6;
+            padding: 1rem;
+        }
+        .message {
+            max-width: 70%;
+            margin-bottom: 1rem;
+        }
+        .message-received {
+            background-color: #f8f9fa;
+            border-radius: 15px 15px 15px 5px;
+            padding: 0.75rem;
+            margin-right: auto;
+        }
+        .message-sent {
+            background-color: #007bff;
+            color: white;
+            border-radius: 15px 15px 5px 15px;
+            padding: 0.75rem;
+            margin-left: auto;
+        }
+        .user-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .status-online {
+            background-color: #28a745;
+        }
+        .status-offline {
+            background-color: #dc3545;
+        }
+        .chat-user {
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .chat-user:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+        .chat-user.active {
+            background-color: rgba(0,123,255,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar will be loaded dynamically -->
+    <div id="nav-placeholder"></div>
+
+    <div class="container py-5">
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="chat-container">
+                    <!-- Chat Sidebar -->
+                    <div class="chat-sidebar">
+                        <!-- Search Users -->
+                        <div class="p-3 border-bottom">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search users...">
+                                <button class="btn btn-outline-secondary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Online Users -->
+                        <div class="p-3 border-bottom">
+                            <h6 class="mb-3">Online Users</h6>
+                            <div class="chat-user active p-2 rounded">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://placehold.co/40x40" class="rounded-circle me-2" alt="User">
+                                    <div>
+                                        <h6 class="mb-0">Sarah Wilson</h6>
+                                        <small class="text-muted">
+                                            <span class="user-status status-online"></span>Native Speaker
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-user p-2 rounded">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://placehold.co/40x40" class="rounded-circle me-2" alt="User">
+                                    <div>
+                                        <h6 class="mb-0">John Smith</h6>
+                                        <small class="text-muted">
+                                            <span class="user-status status-online"></span>Language Partner
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Chats -->
+                        <div class="p-3">
+                            <h6 class="mb-3">Recent Chats</h6>
+                            <div class="chat-user p-2 rounded">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://placehold.co/40x40" class="rounded-circle me-2" alt="User">
+                                    <div>
+                                        <h6 class="mb-0">Mike Johnson</h6>
+                                        <small class="text-muted">
+                                            <span class="user-status status-offline"></span>Last seen 2h ago
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-user p-2 rounded">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://placehold.co/40x40" class="rounded-circle me-2" alt="User">
+                                    <div>
+                                        <h6 class="mb-0">Emma Davis</h6>
+                                        <small class="text-muted">
+                                            <span class="user-status status-offline"></span>Last seen 1d ago
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Main Area -->
+                    <div class="chat-main">
+                        <!-- Chat Header -->
+                        <div class="p-3 border-bottom">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://placehold.co/40x40" class="rounded-circle me-2" alt="User">
+                                    <div>
+                                        <h5 class="mb-0">Sarah Wilson</h5>
+                                        <small class="text-muted">Native English Speaker • Online</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-outline-primary me-2">
+                                        <i class="fas fa-video"></i>
+                                    </button>
+                                    <button class="btn btn-outline-primary me-2">
+                                        <i class="fas fa-phone"></i>
+                                    </button>
+                                    <button class="btn btn-outline-secondary">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Messages -->
+                        <div class="chat-messages">
+                            <div class="message message-received">
+                                <div class="mb-1">
+                                    <small class="text-muted">Sarah Wilson • 10:30 AM</small>
+                                </div>
+                                Hi! How can I help you with your English practice today?
+                            </div>
+                            <div class="message message-sent">
+                                <div class="mb-1">
+                                    <small class="text-white">You • 10:31 AM</small>
+                                </div>
+                                Hello! I'd like to practice my speaking skills. Could you help me with pronunciation?
+                            </div>
+                            <div class="message message-received">
+                                <div class="mb-1">
+                                    <small class="text-muted">Sarah Wilson • 10:32 AM</small>
+                                </div>
+                                Of course! Let's start with some common words that learners often find challenging.
+                            </div>
+                            <div class="message message-sent">
+                                <div class="mb-1">
+                                    <small class="text-white">You • 10:33 AM</small>
+                                </div>
+                                That would be great! I especially struggle with "th" sounds.
+                            </div>
+                        </div>
+
+                        <!-- Chat Input -->
+                        <div class="chat-input">
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary">
+                                    <i class="fas fa-paperclip"></i>
+                                </button>
+                                <input type="text" class="form-control" placeholder="Type your message...">
+                                <button class="btn btn-outline-secondary">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 EnglishMaster. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load navigation
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+
+        // Handle chat user selection
+        document.querySelectorAll('.chat-user').forEach(user => {
+            user.addEventListener('click', function() {
+                document.querySelectorAll('.chat-user').forEach(u => u.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Handle message sending
+        const messageInput = document.querySelector('.chat-input input');
+        const sendButton = document.querySelector('.chat-input .btn-primary');
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                const messagesContainer = document.querySelector('.chat-messages');
+                const newMessage = document.createElement('div');
+                newMessage.className = 'message message-sent';
+                newMessage.innerHTML = `
+                    <div class="mb-1">
+                        <small class="text-white">You • ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</small>
+                    </div>
+                    ${message}
+                `;
+                messagesContainer.appendChild(newMessage);
+                messageInput.value = '';
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

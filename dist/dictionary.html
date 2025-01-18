@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary - EnglishMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dark-mode.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .search-history-item {
+            transition: background-color 0.3s ease;
+        }
+        .search-history-item:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+        .pronunciation-btn {
+            cursor: pointer;
+        }
+        .pronunciation-btn:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar will be loaded dynamically -->
+    <div id="nav-placeholder"></div>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5">English Dictionary</h1>
+
+        <!-- Search Bar -->
+        <div class="row mb-5">
+            <div class="col-md-8 mx-auto">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-lg" id="searchInput" 
+                           placeholder="Search for a word...">
+                    <button class="btn btn-primary" type="button" id="searchBtn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="row">
+            <!-- Dictionary Results -->
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div id="searchResult">
+                            <!-- Example Word Definition -->
+                            <div class="word-definition">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h2 class="mb-0">example</h2>
+                                    <div>
+                                        <span class="text-muted me-3">/ɪɡˈzɑːmpəl/</span>
+                                        <i class="fas fa-volume-up pronunciation-btn"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <span class="badge bg-secondary mb-2">noun</span>
+                                    <p>1. A representative form or pattern</p>
+                                    <p class="text-muted fst-italic">"This is a good example of how the system works."</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <span class="badge bg-secondary mb-2">verb</span>
+                                    <p>1. To show or illustrate by example</p>
+                                    <p class="text-muted fst-italic">"The teacher exampled the principle with a demonstration."</p>
+                                </div>
+
+                                <!-- Synonyms -->
+                                <div class="mb-4">
+                                    <h5>Synonyms</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-light text-dark">instance</span>
+                                        <span class="badge bg-light text-dark">sample</span>
+                                        <span class="badge bg-light text-dark">illustration</span>
+                                        <span class="badge bg-light text-dark">case</span>
+                                    </div>
+                                </div>
+
+                                <!-- Antonyms -->
+                                <div>
+                                    <h5>Antonyms</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-light text-dark">exception</span>
+                                        <span class="badge bg-light text-dark">difference</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Resources -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Additional Resources</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h5>Practice Exercises</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-decoration-none">
+                                        <i class="fas fa-pencil-alt me-2"></i>Usage Examples
+                                    </a></li>
+                                    <li><a href="#" class="text-decoration-none">
+                                        <i class="fas fa-tasks me-2"></i>Word Forms Quiz
+                                    </a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h5>Related Content</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-decoration-none">
+                                        <i class="fas fa-book me-2"></i>Word Family
+                                    </a></li>
+                                    <li><a href="#" class="text-decoration-none">
+                                        <i class="fas fa-puzzle-piece me-2"></i>Common Collocations
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <!-- Search History -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Recent Searches</h4>
+                        <button class="btn btn-sm btn-outline-secondary">Clear</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action search-history-item">
+                                <div class="d-flex justify-content-between">
+                                    <span>example</span>
+                                    <small class="text-muted">2 mins ago</small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action search-history-item">
+                                <div class="d-flex justify-content-between">
+                                    <span>vocabulary</span>
+                                    <small class="text-muted">5 mins ago</small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action search-history-item">
+                                <div class="d-flex justify-content-between">
+                                    <span>dictionary</span>
+                                    <small class="text-muted">10 mins ago</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Word of the Day -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Word of the Day</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">serendipity</h5>
+                        <p class="text-muted mb-2">/ˌserənˈdɪpɪti/</p>
+                        <p class="card-text">The occurrence and development of events by chance in a happy or beneficial way.</p>
+                        <p class="fst-italic text-muted">"A fortunate stroke of serendipity brought them together."</p>
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-volume-up me-1"></i> Listen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 EnglishMaster. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load navigation
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+
+        // Dictionary functionality
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const searchTerm = document.getElementById('searchInput').value;
+            // In a real application, this would make an API call to a dictionary service
+            console.log('Searching for:', searchTerm);
+        });
+
+        // Handle pronunciation button clicks
+        document.querySelectorAll('.pronunciation-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // In a real application, this would play the pronunciation audio
+                console.log('Playing pronunciation');
+            });
+        });
+    </script>
+</body>
+</html>
