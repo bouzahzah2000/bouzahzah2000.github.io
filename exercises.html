@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises - EnglishMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dark-mode.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation bar will be loaded dynamically -->
+    <div id="nav-placeholder"></div>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Practice Exercises</h1>
+
+        <!-- Exercise Filters -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <select class="form-select" id="levelFilter">
+                    <option value="all">All Levels</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" id="typeFilter">
+                    <option value="all">All Types</option>
+                    <option value="grammar">Grammar</option>
+                    <option value="vocabulary">Vocabulary</option>
+                    <option value="reading">Reading</option>
+                    <option value="listening">Listening</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Exercise Grid -->
+        <div class="row">
+            <!-- Grammar Exercise -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Present Tense Practice</h5>
+                        <span class="badge bg-light text-primary">Grammar</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Practice using present simple and present continuous tenses correctly.</p>
+                        <ul class="list-unstyled mb-3">
+                            <li><i class="fas fa-clock me-2"></i>15 minutes</li>
+                            <li><i class="fas fa-star me-2"></i>Beginner Level</li>
+                            <li><i class="fas fa-tasks me-2"></i>20 Questions</li>
+                        </ul>
+                        <button class="btn btn-primary w-100">Start Exercise</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary Exercise -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Business Vocabulary</h5>
+                        <span class="badge bg-light text-success">Vocabulary</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Learn and practice common business terms and expressions.</p>
+                        <ul class="list-unstyled mb-3">
+                            <li><i class="fas fa-clock me-2"></i>20 minutes</li>
+                            <li><i class="fas fa-star me-2"></i>Intermediate Level</li>
+                            <li><i class="fas fa-tasks me-2"></i>25 Questions</li>
+                        </ul>
+                        <button class="btn btn-success w-100">Start Exercise</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reading Exercise -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Reading Comprehension</h5>
+                        <span class="badge bg-light text-info">Reading</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Improve your reading comprehension with interesting articles.</p>
+                        <ul class="list-unstyled mb-3">
+                            <li><i class="fas fa-clock me-2"></i>30 minutes</li>
+                            <li><i class="fas fa-star me-2"></i>Advanced Level</li>
+                            <li><i class="fas fa-tasks me-2"></i>10 Questions</li>
+                        </ul>
+                        <button class="btn btn-info w-100">Start Exercise</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening Exercise -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Listening Practice</h5>
+                        <span class="badge bg-light text-warning">Listening</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Practice understanding native English speakers in various contexts.</p>
+                        <ul class="list-unstyled mb-3">
+                            <li><i class="fas fa-clock me-2"></i>25 minutes</li>
+                            <li><i class="fas fa-star me-2"></i>Intermediate Level</li>
+                            <li><i class="fas fa-tasks me-2"></i>15 Questions</li>
+                        </ul>
+                        <button class="btn btn-warning w-100">Start Exercise</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="mt-5">
+            <h3 class="mb-4">Your Progress</h3>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5>Grammar</h5>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small>75% Complete</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5>Vocabulary</h5>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small>60% Complete</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5>Reading</h5>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small>45% Complete</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5>Listening</h5>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small>30% Complete</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 EnglishMaster. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load navigation
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+
+        // Handle filters
+        document.getElementById('levelFilter').addEventListener('change', filterExercises);
+        document.getElementById('typeFilter').addEventListener('change', filterExercises);
+
+        function filterExercises() {
+            const level = document.getElementById('levelFilter').value;
+            const type = document.getElementById('typeFilter').value;
+            console.log('Filtering exercises:', { level, type });
+            // Implement filtering logic here
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Games - EnglishMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dark-mode.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .game-card {
+            transition: transform 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-10px);
+        }
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar will be loaded dynamically -->
+    <div id="nav-placeholder"></div>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Learning Games</h1>
+        
+        <!-- Games Grid -->
+        <div class="row">
+            <!-- Word Search -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-search game-icon text-primary"></i>
+                        <h4 class="card-title">Word Search</h4>
+                        <p class="card-text">Find hidden English words in a grid of letters.</p>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-2">Vocabulary</span>
+                            <span class="badge bg-info">All Levels</span>
+                        </div>
+                        <button class="btn btn-primary">Play Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hangman -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user-secret game-icon text-warning"></i>
+                        <h4 class="card-title">Hangman</h4>
+                        <p class="card-text">Guess the hidden word one letter at a time.</p>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-2">Spelling</span>
+                            <span class="badge bg-info">Beginner</span>
+                        </div>
+                        <button class="btn btn-primary">Play Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory Match -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-clone game-icon text-success"></i>
+                        <h4 class="card-title">Memory Match</h4>
+                        <p class="card-text">Match pairs of words and their meanings.</p>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-2">Vocabulary</span>
+                            <span class="badge bg-info">All Levels</span>
+                        </div>
+                        <button class="btn btn-primary">Play Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sentence Scramble -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-random game-icon text-danger"></i>
+                        <h4 class="card-title">Sentence Scramble</h4>
+                        <p class="card-text">Rearrange words to form correct sentences.</p>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-2">Grammar</span>
+                            <span class="badge bg-info">Intermediate</span>
+                        </div>
+                        <button class="btn btn-primary">Play Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Challenge -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-question-circle game-icon text-info"></i>
+                        <h4 class="card-title">Quiz Challenge</h4>
+                        <p class="card-text">Test your knowledge with timed quizzes.</p>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-2">Mixed</span>
+                            <span class="badge bg-info">All Levels</span>
+                        </div>
+                        <button class="btn btn-primary">Play Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crossword -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 game-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-th game-icon text-secondary"></i>
+                        <h4 class="card-title">Crossword</h4>
+                        <p class="card-text">Solve English crossword puzzles.</p>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-2">Vocabulary</span>
+                            <span class="badge bg-info">Advanced</span>
+                        </div>
+                        <button class="btn btn-primary">Play Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <div class="mt-5">
+            <h3 class="mb-4">Top Players</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Player</th>
+                                    <th>Game</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <img src="https://placehold.co/30x30" class="rounded-circle me-2" alt="Player">
+                                        John D.
+                                    </td>
+                                    <td>Word Search</td>
+                                    <td>2,450</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <img src="https://placehold.co/30x30" class="rounded-circle me-2" alt="Player">
+                                        Sarah M.
+                                    </td>
+                                    <td>Quiz Challenge</td>
+                                    <td>2,310</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>
+                                        <img src="https://placehold.co/30x30" class="rounded-circle me-2" alt="Player">
+                                        Mike R.
+                                    </td>
+                                    <td>Memory Match</td>
+                                    <td>2,180</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="mt-5">
+            <h3 class="mb-4">Your Achievements</h3>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                            <h5>Word Master</h5>
+                            <p class="small">Complete 100 word searches</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-star fa-3x text-primary mb-3"></i>
+                            <h5>Quiz Champion</h5>
+                            <p class="small">Win 50 quiz challenges</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-medal fa-3x text-success mb-3"></i>
+                            <h5>Memory Expert</h5>
+                            <p class="small">Match 1000 pairs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-award fa-3x text-info mb-3"></i>
+                            <h5>Grammar Guru</h5>
+                            <p class="small">Perfect score in Sentence Scramble</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 EnglishMaster. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Load navigation
+        fetch('components/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
